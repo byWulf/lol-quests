@@ -1,0 +1,34 @@
+<template name="summoner">
+    <div class="row">
+        <div class="col-xs-12 contentContainer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-sm-push-8 text-right">
+                    {{fromNow lastUpdate}}
+                    {{#if hasElapsed lastUpdate 5 'minutes'}}
+                        <button class="btn btn-default btn-xs {{#if refreshing}}disabled{{/if}}" id="refreshNowButton"><i class="fa fa-refresh {{#if refreshing}}fa-spin{{/if}}"></i></button>
+                    {{/if}}
+                </div>
+                <div class="col-xs-12 col-sm-8 col-sm-pull-4">
+                    {{> summonerHeadline}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-left-xxl margin-right-xxl">
+        {{#if lastQuest}}
+            <div class="col-md-6 col-xs-12">
+                {{> questBlock lastQuest}}
+            </div>
+        {{/if}}
+        <div class="{{#if lastQuest}}col-md-6{{/if}} col-xs-12">
+            {{> questBlock currentQuest}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 contentContainer margin-top-lg">
+            {{#each championMasteries}}
+                {{> champion}}
+            {{/each}}
+        </div>
+    </div>
+</template>

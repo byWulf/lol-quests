@@ -1,0 +1,102 @@
+.champion {
+    margin-top: 10px;
+
+    .championNameContainer {
+        height: 48px;
+        padding-left: 58px;
+        background-position: left center;
+        background-size: 48px;
+        background-repeat: no-repeat;
+
+        .championName {
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .championTitle {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .progressContainer {
+        position: relative;
+        margin-top: 10px;
+
+        .progress {
+            overflow: visible;
+
+            .progress-bar {
+                position: relative;
+
+                &.finished:after {
+                    position: absolute;
+                    right: -20px;
+                    top: -12px;
+
+                    background-size: 40px 40px;
+                    background-position: center;
+                    width: 40px;
+                    height: 40px;
+
+                    content: ' ';
+                    z-index: 2;
+                }
+                &.rank2 {
+                    background-color: #aa8143;
+                    &.finished:after {
+                        background-image: url(/mastery2.png);
+                    }
+                }
+                &.rank3 {
+                    background-color: #be9543;
+                    &.finished:after {
+                        background-image: url(/mastery3.png);
+                    }
+                }
+                &.rank4 {
+                    background-color: #d2a944;
+                    &.finished:after {
+                        background-image: url(/mastery4.png);
+                    }
+                }
+                &.rank5 {
+                    background-color: #e6b94c;
+                    &.finished:after {
+                        background-image: url(/mastery5.png);
+                    }
+                }
+                &.extraRank {
+                    background-color: #fac852;
+                    &.openEnd:before {
+                        position: absolute;
+                        content: ' ';
+                        width: 100px;
+                        height: 40px;
+                        right: -100px;
+                        top: -10px;
+                        background-image: url(/openend.png);
+                    }
+                    &.openEnd:after {
+                        position: absolute;
+                        content: ' ';
+                        background-color: #ffe8be;
+                        height: 100%;
+                        width: 1px;
+                        right: 0;
+                        top: 0;
+                        box-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
+                    }
+                }
+            }
+        }
+        .points {
+            position: absolute;
+            top: 0;
+            right: 5px;
+            color: #333;
+            text-shadow: none;
+        }
+    }
+}

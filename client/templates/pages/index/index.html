@@ -1,0 +1,53 @@
+<template name="index">
+    <div class="row">
+        <div class="col-xs-12 contentContainer">
+            <div class="row">
+                <div class="col-md-4 hidden-sm hidden-xs text-center">
+                    <img src="/conceptart.png">
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1>Welcome to lol-quests.byWulf</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 margin-bottom-md">
+                            If you wanna get daily new quests to improve you skills in League of Legends, then this page is for you! Just enter your summoner name and you will instantly get useful suggestions what to do based on your current champion masteries. Try it out right now!
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 margin-top-md">
+                            <form id="chooseSummonerForm">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-5 col-sm-4">
+                                        <label class="control-label margin-top-sm" for="summonerName">Enter your summoner name:</label>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7 col-sm-8">
+                                        <div class="input-group">
+                                            <div class="input-group-btn regionChooser">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{currentRegionText}} <span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    {{#each regions}}
+                                                        <li class="{{#if isCurrentRegion regionCode}}active{{/if}}">
+                                                            <a href="#" class="regionOption" data-value="{{regionCode}}">{{regionText}}</a>
+                                                        </li>
+                                                    {{/each}}
+                                                </ul>
+                                            </div>
+                                            <input type="text" class="form-control" id="summonerName" value="{{summonerName}}">
+                                            <div class="input-group-btn">
+                                                <button type="submit" class="btn btn-primary">Go!</button>
+                                            </div>
+                                        </div>
+                                        <p class="help-block error">{{error}}</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,38 @@
+@headlineHeight: 64px;
+
+.summonerIconBig {
+    width: @headlineHeight;
+    height: @headlineHeight;
+}
+.summonerName {
+    line-height: @headlineHeight;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.championMasteriesCount {
+    position: relative;
+    width: 32px;
+    line-height: @headlineHeight;
+    margin-left: 10px;
+    display: inline-block;
+
+    .count {
+        position: absolute;
+        left: 0;
+        top: -50px;
+        width: 32px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .icon {
+        position: absolute;
+        left: 0;
+        bottom: -22px;
+        width: 32px;
+        height: 32px;
+        background-image: url(/mastery1.png);
+        background-position: center;
+        background-size: 200%;
+    }
+}

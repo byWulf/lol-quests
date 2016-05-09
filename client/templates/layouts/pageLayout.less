@@ -1,0 +1,72 @@
+@import "../../style/bootstrap-variables.less";
+
+body {
+    margin-top: 70px !important;
+    text-shadow: 1px 1px rgba(0,0,0,0.5);
+    background-color: #000 !important;
+    overflow-x: hidden;
+    background-image: url(/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .navbar-inverse {
+        .box-shadow;
+    }
+
+    .contentContainer {
+        padding: 20px;
+        background-color: @brand-container;
+        border: 1px solid darken(@brand-container, 5%);
+        border-radius: @border-radius-base;
+        .box-shadow;
+
+
+        background-image: url(/background_blurred.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .footerRow {
+        margin-top: 20px;
+        font-size: 12px;
+    }
+}
+
+.margin-top-sm {
+    margin-top: 5px;
+}
+.margin-top-lg {
+    margin-top: 20px;
+}
+.margin-bottom-md {
+    margin-bottom: 10px;
+}
+.row.margin-left-xxl {
+    margin-left: -30px;
+}
+.row.margin-right-xxl {
+    margin-right: -30px;
+}
+.margin-top-md {
+    margin-top: 10px;
+}
+.margin-top-none {
+    margin-top: 0;
+}
+
+.grayscale {
+     -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+     -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+     -webkit-filter: grayscale(100%);
+     filter: gray;
+     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+}
+
+.progressContainer .progress {
+    .box-shadow;
+}
+.dropdown-menu > li > a {
+    text-shadow: none;
+}

@@ -1,0 +1,30 @@
+<template name="questBlock">
+    {{#if .}}
+        <div class="dailyQuest questState_{{state}} {{#if effect}}animated {{effect}}{{/if}}">
+            <div class="backgroundImage {{view.backgroundClasses}}" style="background-image: url({{view.backgroundImage}});"></div>
+            <div class="content">
+                <div class="questIndex">
+                    {{#if isState 'running'}}
+                        Current quest - {{#if remaining}}remaining: {{remaining}} ({{remainingTime startDate 1 'days'}} left){{else}}{{remainingTime startDate 1 'days'}} left{{/if}}
+                    {{else}}
+                        Last quest - {{#if isState 'failed'}}failed <i class="fa fa-times failedColor"></i>{{else}}completed <i class="fa fa-check finishedColor"></i>{{/if}}
+                    {{/if}}
+                </div>
+                <div class="title">{{view.title}}</div>
+                <div class="description">{{view.description}}</div>
+                {{#if isState 'running'}}
+                    <div class="buttonRow text-right">
+                        <div class="btn btn-primary btn-xs cancelQuestButton {{#if refreshing}}disabled{{/if}}">{{#if refreshing}}<i class="fa fa-refresh fa-spin"></i> {{/if}}This quest is too hard! I want a new quest!</div>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    {{else}}
+        <div class="dailyQuest">
+            <div class="backgroundImage grey"></div>
+            <div class="content">
+                Currently I don't have any new quests for you. Please come back later.
+            </div>
+        </div>
+    {{/if}}
+</template>

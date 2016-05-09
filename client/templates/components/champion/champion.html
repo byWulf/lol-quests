@@ -1,0 +1,22 @@
+<template name="champion">
+    <div class="champion">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-4">
+                <div class="championNameContainer" style="background-image: url(http://ddragon.leagueoflegends.com/cdn/{{ddragonVersion}}/img/champion/{{champion championId 'key'}}.png);">
+                    <div class="championName">{{champion championId 'name'}}</div>
+                    <div class="championTitle">{{champion championId 'title'}}</div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-8">
+                <div class="progressContainer">
+                    <div class="progress">
+                        {{#each progresses championPoints}}
+                            <div class="progress-bar {{colorClass}}" style="width: {{percent}}%;"></div>
+                        {{/each}}
+                    </div>
+                    <div class="points">{{points championPoints}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
